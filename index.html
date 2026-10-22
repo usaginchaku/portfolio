@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>usaginchaku — Works</title>
+<meta name="description" content="usaginchaku がつくったブラウザゲーム・Webツールの作品集。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%87%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #fbfbfa;
+    --fg: #1f1f1f;
+    --muted: #6b6b6b;
+    --line: #e6e4e0;
+    --card: #ffffff;
+    --accent: #c2410c;
+    --tag: #f2f0ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161616;
+      --fg: #ececec;
+      --muted: #9a9a9a;
+      --line: #2c2c2c;
+      --card: #1d1d1d;
+      --accent: #fb923c;
+      --tag: #262626;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    line-height: 1.75;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 72px 20px 96px; }
+  a { color: inherit; }
+
+  header h1 { font-size: 1.75rem; margin: 0 0 4px; letter-spacing: .02em; }
+  header p { margin: 0; color: var(--muted); }
+  nav { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: .9rem; }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--accent); }
+
+  section { margin-top: 64px; }
+  h2 {
+    font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line);
+  }
+
+  .featured { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 20px 22px; display: flex; flex-direction: column;
+  }
+  .card h3 { font-size: 1.1rem; margin: 0; }
+  .card .kind { font-size: .78rem; color: var(--muted); margin: 0 0 6px; }
+  .card p.desc { margin: 8px 0 0; font-size: .93rem; }
+  .card ul { margin: 10px 0 0; padding-left: 1.1em; font-size: .86rem; color: var(--muted); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tags span { font-size: .72rem; background: var(--tag); color: var(--muted); padding: 2px 8px; border-radius: 99px; }
+
+  .links { margin-top: auto; padding-top: 16px; display: flex; gap: 16px; font-size: .88rem; }
+  .links a { text-decoration: none; font-weight: 600; }
+  .links a.play { color: var(--accent); }
+  .links a.code { color: var(--muted); font-weight: 400; }
+  .links a:hover { text-decoration: underline; }
+
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list li {
+    display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; align-items: baseline;
+    padding: 14px 0; border-bottom: 1px solid var(--line);
+  }
+  .list li:last-child { border-bottom: 0; }
+  .list h3 { font-size: 1rem; margin: 0; }
+  .list p { grid-column: 1 / -1; margin: 0; font-size: .9rem; color: var(--muted); }
+  .list .links { padding-top: 0; margin: 0; }
+
+  footer { margin-top: 80px; font-size: .8rem; color: var(--muted); }
+  footer p { margin: 4px 0; }
+
+  @media (max-width: 520px) {
+    .wrap { padding: 48px 16px 72px; }
+    .featured { grid-template-columns: 1fr; }
+    .list li { grid-template-columns: 1fr; }
+    .list .links { padding-top: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>usaginchaku</h1>
+  <p>ブラウザで動く小さなゲームと道具をつくっています。<br>インストール不要・広告なし・データは端末の中だけ、が基本方針です。</p>
+  <nav>
+    <a href="#featured">Featured</a>
+    <a href="#games">Games</a>
+    <a href="#tools">Tools</a>
+    <a href="#fan">Fan Works</a>
+    <a href="#lab">Archive</a>
+    <a href="https://github.com/usaginchaku">GitHub ↗</a>
+  </nav>
+</header>
+
+<section id="featured">
+  <h2>Featured</h2>
+  <div class="featured">
+
+    <article class="card">
+      <p class="kind">ゲーム ・ 箱庭経営</p>
+      <h3>奇妙な収集館</h3>
+      <p class="desc">収集して、修復して、飾る。自分だけの小さな収集館を育てる経営ゲーム。</p>
+      <ul>
+        <li>15種の収蔵品と3テーマの隣接効果、展示の改良と増築</li>
+        <li>入館料・客層・満足度を見ながらの営業シミュレーション</li>
+        <li>自動保存、JSON書き出し、旧セーブの自動移行</li>
+      </ul>
+      <div class="tags"><span>JavaScript</span><span>ES Modules</span><span>Node test</span></div>
+      <div class="links">
+        <a class="play" href="https://usaginchaku.github.io/cabinet-of-wonders/">遊ぶ →</a>
+        <a class="code" href="https://github.com/usaginchaku/cabinet-of-wonders">Code</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <p class="kind">ツール ・ 画像</p>
+      <h3>ならべる</h3>
+      <p class="desc">無料・透かしなしの画像コラージュ。PCとスマホのブラウザで複数の画像を1枚にまとめます。</p>
+      <ul>
+        <li>レイアウト配置と自由配置、拡大・回転・枠サイズ調整</li>
+        <li>背景模様、文字入れ、PNG / JPEG 書き出し</li>
+        <li>画像はサーバーに送らず端末内で処理</li>
+      </ul>
+      <div class="tags"><span>JavaScript</span><span>Canvas</span><span>IndexedDB</span><span>Playwright</span></div>
+      <div class="links">
+        <a class="play" href="https://usaginchaku.github.io/collage-app/">使う →</a>
+        <a class="code" href="https://github.com/usaginchaku/collage-app">Code</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <p class="kind">ツール ・ 画像認識</p>
+      <h3>ハンター文字 OCR</h3>
+      <p class="desc">画像内のハンター文字を読み取ってひらがなに変換する、ブラウザ完結のOCRと画像メーカー。</p>
+      <ul>
+        <li>独自SVGグリフで81かなに対応、複数行の読み順認識</li>
+        <li>認識はWeb Workerで実行、候補の確認と修正UI</li>
+      </ul>
+      <div class="tags"><span>TypeScript</span><span>Web Worker</span><span>Vite</span><span>非公式ファンツール</span></div>
+      <div class="links">
+        <a class="play" href="https://usaginchaku.github.io/hunter-moji-ocr/">使う →</a>
+        <a class="code" href="https://github.com/usaginchaku/hunter-moji-ocr">Code</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <p class="kind">音あそび</p>
+      <h3>ぎんちゃくらぶ</h3>
+      <p class="desc">オリジナル曲「POYO POP」に合わせて、うさぎんちゃくをタップして遊ぶ音楽サイト。</p>
+      <ul>
+        <li>8つのパッドを拍にクオンタイズして発音</li>
+        <li>4小節ループ録音、アニメーション軽減設定に対応</li>
+      </ul>
+      <div class="tags"><span>JavaScript</span><span>Web Audio API</span><span>作曲</span></div>
+      <div class="links">
+        <a class="play" href="https://usaginchaku.github.io/ginchaclub/">遊ぶ →</a>
+        <a class="code" href="https://github.com/usaginchaku/ginchaclub">Code</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="games">
+  <h2>Games</h2>
+  <ul class="list">
+    <li>
+      <h3>おむすびくりっかー</h3>
+      <div class="links">
+        <a class="play" href="https://omusubi-clicker.mochibird.click/">遊ぶ →</a>
+        <a class="code" href="https://github.com/usaginchaku/omusubi-clicker">Code</a>
+      </div>
+      <p>おむすびを握って米粒を増やす放置クリッカー。おばあちゃんから始まり、だんだん世界の様子がおかしくなります。</p>
+    </li>
+    <li>
+      <h3>2048 — ひと息、ひと手。</h3>
+      <div class="links">
+        <a class="play" href="https://usaginchaku.github.io/pocket-2048/">遊ぶ →</a>
+        <a class="code" href="https://github.com/usaginchaku/pocket-2048">Code</a>
+      </div>
+      <p>iPhoneで遊ぶための広告なし・自動セーブ付き2048。ホーム画面に追加すればオフラインでも遊べます。</p>
+    </li>
+    <li>
+      <h3>Blockfall</h3>
+      <div class="links">
+        <a class="code" href="https://github.com/usaginchaku/blockfall">Code</a>
+      </div>
+      <p>ブラウザで遊べる落ちものパズル。ホールド・ゴースト表示、キーボードとスマホ操作に対応。</p>
+    </li>
+  </ul>
+</section>
+
+<section id="tools">
+  <h2>Tools</h2>
+  <ul class="list">
+    <li>
+      <h3>moji — 文字数カウント</h3>
+      <div class="links">
+        <a class="play" href="https://usaginchaku.github.io/moji-count/">使う →</a>
+        <a class="code" href="https://github.com/usaginchaku/moji-count">Code</a>
+      </div>
+      <p>文字数・行数・原稿用紙換算・読了時間・文字コード別バイト数をリアルタイムに。全角半角やかな変換も。</p>
+    </li>
+    <li>
+      <h3>万博予約日計算ツール</h3>
+      <div class="links">
+        <a class="play" href="https://usaginchaku.github.io/expo2025-reservation-calculator/">使う →</a>
+        <a class="code" href="https://github.com/usaginchaku/expo2025-reservation-calculator">Code</a>
+      </div>
+      <p>来場日を選ぶと、大阪・関西万博の各抽選・予約の受付日を逆算して表示します。</p>
+    </li>
+  </ul>
+</section>
+
+<section id="fan">
+  <h2>Fan Works</h2>
+  <ul class="list">
+    <li>
+      <h3>となりの、いつもの席</h3>
+      <div class="links">
+        <a class="play" href="https://usaginchaku.github.io/jj-novelgame/">遊ぶ →</a>
+        <a class="code" href="https://github.com/usaginchaku/jj-novelgame">Code</a>
+      </div>
+      <p>非公式の大学AUノベルゲーム。全39人それぞれの世界で6種類のエンドを遊べます。</p>
+    </li>
+    <li>
+      <h3>夢小説シチュガチャ</h3>
+      <div class="links">
+        <a class="play" href="https://dream-gacha.mochibird.click/">使う →</a>
+        <a class="code" href="https://github.com/usaginchaku/dream-gacha">Code</a>
+      </div>
+      <p>キャラ・世界観・シチュエーションをガチャで引いて、夢小説生成用のプロンプトを組み立てるツール。</p>
+    </li>
+    <li>
+      <h3>夢小説アノテーションツール</h3>
+      <div class="links">
+        <a class="play" href="https://usaginchaku.github.io/yume-annotator/">使う →</a>
+        <a class="code" href="https://github.com/usaginchaku/yume-annotator">Code</a>
+      </div>
+      <p>AI生成した夢小説に注釈をつけて評価するツール。シチュガチャの書き出しJSONを読み込めます。</p>
+    </li>
+    <li>
+      <h3>moemoe analytics</h3>
+      <div class="links">
+        <a class="play" href="https://usaginchaku.github.io/moemoe-analytics/">使う →</a>
+        <a class="code" href="https://github.com/usaginchaku/moemoe-analytics">Code</a>
+      </div>
+      <p>「好き」を1本のランキングにせず、キャラクターごとに4軸で評価してレーダーチャートや散布図で分析します。</p>
+    </li>
+    <li>
+      <h3>ジョジョ関連研究図書館</h3>
+      <div class="links">
+        <a class="code" href="https://github.com/usaginchaku/jojo-research-library">Read</a>
+      </div>
+      <p>『ジョジョの奇妙な冒険』各部を読むための、無料全文リンク中心の文献目録。Zotero用RISも用意。</p>
+    </li>
+  </ul>
+</section>
+
+<section id="lab">
+  <h2>Archive</h2>
+  <ul class="list">
+    <li>
+      <h3>ConvertPictures</h3>
+      <div class="links">
+        <a class="code" href="https://github.com/usaginchaku/ConvertPictures">Code</a>
+      </div>
+      <p>VRChatで撮影した写真を別形式に変換する Python スクリプトの試作。</p>
+    </li>
+  </ul>
+</section>
+
+<footer>
+  <p>Fan Works は各作品の非公式ファン制作で、原作・権利者とは関係ありません。</p>
+  <p>© usaginchaku</p>
+</footer>
+
+</div>
+</body>
+</html>
